@@ -1,0 +1,458 @@
+// Estilos para CartaPokemon - Mantendo essência visual original
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Carta principal */
+.tcg-card {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  animation: slideIn 0.5s ease-out;
+  background: white;
+  position: relative;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tcg-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* Bordas coloridas por tipo */
+.tcg-card.type-normal {
+  border: 8px solid #A8A878;
+}
+
+.tcg-card.type-bug {
+  border: 8px solid #A8B820;
+}
+
+.tcg-card.type-grass {
+  border: 8px solid #78C850;
+}
+
+.tcg-card.type-fairy {
+  border: 8px solid #EE99AC;
+}
+
+.tcg-card.type-water {
+  border: 8px solid #6890F0;
+}
+
+.tcg-card.type-fire {
+  border: 8px solid #F08030;
+}
+
+.tcg-card.type-electric {
+  border: 8px solid #F8D030;
+}
+
+.tcg-card.type-psychic {
+  border: 8px solid #F85888;
+}
+
+.tcg-card.type-fighting {
+  border: 8px solid #C03028;
+}
+
+.tcg-card.type-flying {
+  border: 8px solid #A890F0;
+}
+
+.tcg-card.type-poison {
+  border: 8px solid #A040A0;
+}
+
+.tcg-card.type-ground {
+  border: 8px solid #E0C068;
+}
+
+.tcg-card.type-rock {
+  border: 8px solid #B8A038;
+}
+
+.tcg-card.type-ice {
+  border: 8px solid #98D8D8;
+}
+
+.tcg-card.type-dragon {
+  border: 8px solid #7038F8;
+}
+
+.tcg-card.type-ghost {
+  border: 8px solid #705898;
+}
+
+.tcg-card.type-dark {
+  border: 8px solid #705848;
+}
+
+.tcg-card.type-steel {
+  border: 8px solid #B8B8D0;
+}
+
+/* Header da carta */
+.card-header {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #333;
+  margin: 0;
+}
+
+.card-hp {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #d32f2f;
+}
+
+.card-hp-icon {
+  font-size: 1.3rem;
+}
+
+.card-type-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: #f0f0f0;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #333;
+}
+
+/* Seção de imagem */
+.card-image-section {
+  background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+/* Seção de habilidade */
+.ability-section {
+  padding: 0.8rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.ability-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.3rem;
+}
+
+.ability-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.ability-description {
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Seção de movimentos */
+.moves-section {
+  padding: 0.8rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.move {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  align-items: flex-start;
+}
+
+.move:last-child {
+  margin-bottom: 0;
+}
+
+.move-cost {
+  display: flex;
+  gap: 0.2rem;
+  min-width: 40px;
+}
+
+.energy-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+}
+
+.energy-normal {
+  background: #A8A878;
+}
+
+.energy-bug {
+  background: #A8B820;
+}
+
+.energy-grass {
+  background: #78C850;
+}
+
+.energy-fairy {
+  background: #EE99AC;
+}
+
+.energy-water {
+  background: #6890F0;
+}
+
+.energy-fire {
+  background: #F08030;
+}
+
+.energy-electric {
+  background: #F8D030;
+  color: #333;
+}
+
+.energy-psychic {
+  background: #F85888;
+}
+
+.energy-fighting {
+  background: #C03028;
+}
+
+.energy-flying {
+  background: #A890F0;
+}
+
+.energy-poison {
+  background: #A040A0;
+}
+
+.energy-ground {
+  background: #E0C068;
+  color: #333;
+}
+
+.energy-rock {
+  background: #B8A038;
+}
+
+.energy-ice {
+  background: #98D8D8;
+  color: #333;
+}
+
+.energy-dragon {
+  background: #7038F8;
+}
+
+.energy-ghost {
+  background: #705898;
+}
+
+.energy-dark {
+  background: #705848;
+}
+
+.energy-steel {
+  background: #B8B8D0;
+  color: #333;
+}
+
+.move-info {
+  flex: 1;
+}
+
+.move-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.move-damage {
+  background: #f0f0f0;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  color: #d32f2f;
+  font-weight: 700;
+}
+
+.move-description {
+  font-size: 0.75rem;
+  color: #666;
+  line-height: 1.3;
+}
+
+/* Rodapé da carta */
+.card-footer {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .favorite-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &.favorited {
+      color: #ff6b6b;
+    }
+  }
+}
+
+/* Seção Shiny */
+.shiny-card-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shiny-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tcg-card-shiny {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  background: white;
+  animation: slideIn 0.5s ease-out 0.2s backwards;
+}
+
+.tcg-card-shiny:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.card-image-section-shiny {
+  background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.type-electric {
+    background: linear-gradient(135deg, #F8D030 0%, #F0C020 100%);
+  }
+
+  &.type-fire {
+    background: linear-gradient(135deg, #F08030 0%, #E07020 100%);
+  }
+
+  &.type-water {
+    background: linear-gradient(135deg, #6890F0 0%, #5880E0 100%);
+  }
+
+  &.type-grass {
+    background: linear-gradient(135deg, #78C850 0%, #68B840 100%);
+  }
+}
+
+.card-image-shiny {
+  max-width: 100%;
+  max-height: 130px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cards-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tcg-card {
+    max-width: 100%;
+  }
+
+  .shiny-card-section {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tcg-card-shiny {
+    max-width: 100%;
+  }
+}

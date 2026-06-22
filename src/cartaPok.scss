@@ -1,0 +1,614 @@
+.pokemon-search-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Arial', sans-serif;
+}
+
+.search-section {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.search-section h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.search-input {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.tcg-card {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  animation: slideIn 0.5s ease-out;
+  background: white;
+  position: relative;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tcg-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* Cor de fundo da carta depepndo da tipagem */
+.tcg-card.type-normal {
+  border: 8px solid #A8A878;
+}
+
+.tcg-card.type-bug {
+  border: 8px solid #A8B820;
+}
+
+.tcg-card.type-grass {
+  border: 8px solid #78C850;
+}
+
+.tcg-card.type-fairy {
+  border: 8px solid #EE99AC;
+}
+
+.tcg-card.type-water {
+  border: 8px solid #6890F0;
+}
+
+.tcg-card.type-fire {
+  border: 8px solid #F08030;
+}
+
+.tcg-card.type-electric {
+  border: 8px solid #F8D030;
+}
+
+.tcg-card.type-psychic {
+  border: 8px solid #F85888;
+}
+
+.tcg-card.type-fighting {
+  border: 8px solid #C03028;
+}
+
+.tcg-card.type-flying {
+  border: 8px solid #A890F0;
+}
+
+.tcg-card.type-poison {
+  border: 8px solid #A040A0;
+}
+
+.tcg-card.type-ground {
+  border: 8px solid #E0C068;
+}
+
+.tcg-card.type-rock {
+  border: 8px solid #B8A038;
+}
+
+.tcg-card.type-ice {
+  border: 8px solid #98D8D8;
+}
+
+.tcg-card.type-dragon {
+  border: 8px solid #7038F8;
+}
+
+.tcg-card.type-ghost {
+  border: 8px solid #705898;
+}
+
+.tcg-card.type-dark {
+  border: 8px solid #705848;
+}
+
+.tcg-card.type-steel {
+  border: 8px solid #B8B8D0;
+}
+
+.card-header {
+  background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #333;
+  margin: 0;
+}
+
+.card-hp {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #d32f2f;
+}
+
+.card-hp-icon {
+  font-size: 1.3rem;
+}
+
+.card-type-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: #f0f0f0;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #333;
+}
+
+.card-image-section {
+  background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.ability-section {
+  padding: 0.8rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.ability-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.3rem;
+}
+
+.ability-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.ability-description {
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.moves-section {
+  padding: 0.8rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.move {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  align-items: flex-start;
+}
+
+.move:last-child {
+  margin-bottom: 0;
+}
+
+.move-cost {
+  display: flex;
+  gap: 0.2rem;
+  min-width: 40px;
+}
+
+.energy-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+}
+
+.energy-normal {
+  background: #A8A878;
+}
+
+.energy-bug {
+  background: #A8B820;
+}
+
+.energy-grass {
+  background: #78C850;
+}
+
+.energy-fairy {
+  background: #EE99AC;
+}
+
+.energy-water {
+  background: #6890F0;
+}
+
+.energy-fire {
+  background: #F08030;
+}
+
+.energy-electric {
+  background: #F8D030;
+  color: #333;
+}
+
+.energy-psychic {
+  background: #F85888;
+}
+
+.energy-fighting {
+  background: #C03028;
+}
+
+.energy-flying {
+  background: #A890F0;
+}
+
+.energy-poison {
+  background: #A040A0;
+}
+
+.energy-ground {
+  background: #E0C068;
+  color: #333;
+}
+
+.energy-rock {
+  background: #B8A038;
+}
+
+.energy-ice {
+  background: #98D8D8;
+  color: #333;
+}
+
+.energy-dragon {
+  background: #7038F8;
+}
+
+.energy-ghost {
+  background: #705898;
+}
+
+.energy-dark {
+  background: #705848;
+}
+
+.energy-steel {
+  background: #B8B8D0;
+  color: #333;
+}
+
+.move-info {
+  flex: 1;
+}
+
+.move-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.2rem;
+}
+
+.move-damage {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #d32f2f;
+  float: right;
+}
+
+.move-description {
+  font-size: 0.75rem;
+  color: #666;
+  line-height: 1.3;
+  clear: both;
+}
+
+.card-footer {
+  padding: 0.6rem;
+  background: #f9f9f9;
+  font-size: 0.7rem;
+  color: #999;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+.card-number {
+  font-weight: 700;
+  color: #333;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.shiny-card-section {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.shiny-label {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.tcg-card-shiny {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  animation: slideIn 0.5s ease-out;
+  background: white;
+  position: relative;
+}
+
+.tcg-card-shiny:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.card-image-section-shiny {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image-section-shiny::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: inherit;
+  z-index: 0;
+}
+
+.card-image-section-shiny::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, #e8e8e8 0%, #c0c0c0 100%);
+  z-index: 0;
+}
+
+.card-image-shiny {
+  max-width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  position: relative;
+  z-index: 1;
+}
+
+/* A cor da carta Shyne dependndo da tipagem do pokemon com a tipagem e o prateado*/
+.card-image-section-shiny.type-normal {
+  background: linear-gradient(135deg, #A8A878 0%, #8B8B6F 100%);
+}
+
+.card-image-section-shiny.type-bug {
+  background: linear-gradient(135deg, #A8B820 0%, #8FA518 100%);
+}
+
+.card-image-section-shiny.type-grass {
+  background: linear-gradient(135deg, #78C850 0%, #5FA038 100%);
+}
+
+.card-image-section-shiny.type-fairy {
+  background: linear-gradient(135deg, #EE99AC 0%, #E88BA0 100%);
+}
+
+.card-image-section-shiny.type-water {
+  background: linear-gradient(135deg, #6890F0 0%, #4A6FD8 100%);
+}
+
+.card-image-section-shiny.type-fire {
+  background: linear-gradient(135deg, #F08030 0%, #D86820 100%);
+}
+
+.card-image-section-shiny.type-electric {
+  background: linear-gradient(135deg, #F8D030 0%, #E0B820 100%);
+}
+
+.card-image-section-shiny.type-psychic {
+  background: linear-gradient(135deg, #F85888 0%, #E04070 100%);
+}
+
+.card-image-section-shiny.type-fighting {
+  background: linear-gradient(135deg, #C03028 0%, #A82018 100%);
+}
+
+.card-image-section-shiny.type-flying {
+  background: linear-gradient(135deg, #A890F0 0%, #8870D8 100%);
+}
+
+.card-image-section-shiny.type-poison {
+  background: linear-gradient(135deg, #A040A0 0%, #803080 100%);
+}
+
+.card-image-section-shiny.type-ground {
+  background: linear-gradient(135deg, #E0C068 0%, #C8A850 100%);
+}
+
+.card-image-section-shiny.type-rock {
+  background: linear-gradient(135deg, #B8A038 0%, #A08820 100%);
+}
+
+.card-image-section-shiny.type-ice {
+  background: linear-gradient(135deg, #98D8D8 0%, #78C0C0 100%);
+}
+
+.card-image-section-shiny.type-dragon {
+  background: linear-gradient(135deg, #7038F8 0%, #5820D0 100%);
+}
+
+.card-image-section-shiny.type-ghost {
+  background: linear-gradient(135deg, #705898 0%, #584080 100%);
+}
+
+.card-image-section-shiny.type-dark {
+  background: linear-gradient(135deg, #705848 0%, #584030 100%);
+}
+
+.card-image-section-shiny.type-steel {
+  background: linear-gradient(135deg, #B8B8D0 0%, #9898B8 100%);
+}
+
+.empty-state {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .pokemon-search-container {
+    padding: 1rem;
+  }
+
+  .search-section h1 {
+    font-size: 2rem;
+  }
+
+  .tcg-card,
+  .tcg-card-shiny {
+    max-width: 100%;
+  }
+
+  .card-name {
+    font-size: 1.2rem;
+  }
+
+  .card-image-section,
+  .card-image-section-shiny {
+    min-height: 160px;
+    padding: 0.8rem;
+  }
+
+  .card-image,
+  .card-image-shiny {
+    max-height: 140px;
+  }
+
+  .cards-wrapper {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-section h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-header {
+    padding: 0.6rem;
+  }
+
+  .card-name {
+    font-size: 1rem;
+  }
+
+  .card-hp {
+    font-size: 0.95rem;
+  }
+
+  .card-image-section {
+    min-height: 140px;
+    padding: 0.6rem;
+  }
+
+  .card-image {
+    max-height: 120px;
+  }
+
+  .ability-section,
+  .moves-section {
+    padding: 0.6rem;
+  }
+
+  .move {
+    margin-bottom: 0.5rem;
+  }
+}
