@@ -231,11 +231,11 @@ Os dados consultados ficam armazenados localmente. Caso não exista conexão com
 
 ## 8. Considerações Finais
 
-Durante o desenvolvimento do projeto, os principais desafios encontrados foram a implementação do funcionamento offline, o gerenciamento do armazenamento local de dados e a adaptação da aplicação aos requisitos de uma Progressive Web Application.
+O desenvolvimento deste projeto possibilitou a aplicação prática dos conceitos estudados na disciplina de Construção de Páginas Web IV, especialmente aqueles relacionados ao desenvolvimento com React, consumo de APIs, armazenamento local de dados e implementação de Progressive Web Applications (PWA).
 
-O projeto possibilitou a aplicação prática de conceitos relacionados ao desenvolvimento com React, integração com APIs REST, organização de componentes e persistência de dados.
+Entre as principais dificuldades encontradas durante o desenvolvimento destacam-se a implementação do funcionamento offline por meio do Service Worker, o gerenciamento do cache utilizando LocalStorage e a organização da aplicação de forma modular e reutilizável.
 
-Como trabalhos futuros, podem ser implementados filtros avançados de pesquisa, comparação entre Pokémon, ampliação das informações apresentadas e melhorias na experiência do usuário.
+Como trabalhos futuros, podem ser implementados recursos adicionais, como filtros avançados de pesquisa, comparação entre Pokémon, expansão das informações apresentadas ao usuário e melhorias na experiência de navegação.
 
 ---
 
